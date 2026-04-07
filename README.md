@@ -49,7 +49,8 @@ The recommended install path is a one-line script that installs the bridge app i
 ```bash
 curl -fsSL https://raw.githubusercontent.com/wrenqindesign/claude-code-in-figma/main/install.sh | bash
 ```
-<img width="1160" height="770" alt="CleanShot 2026-04-07 at 16 32 57@2x" src="https://github.com/user-attachments/assets/79b73c19-d198-4108-95fc-9b9edb8d877f" />
+<img width="1520" height="1130" alt="CleanShot 2026-04-07 at 16 32 57@2x" src="https://github.com/user-attachments/assets/5a576e8d-da87-42b3-9e74-b45f6c8027c0" />
+
 
 Notes:
 
@@ -73,7 +74,8 @@ claude  # follow the login prompts
 ### Step 2 — Install the bridge app
 
 Run this command. It installs the bridge app automatically.
-<img width="1160" height="770" alt="CleanShot 2026-04-07 at 16 32 57@2x" src="https://github.com/user-attachments/assets/a4eab89d-b2ef-4b7a-8dfa-be1231903fba" />
+<img width="1520" height="1130" alt="CleanShot 2026-04-07 at 16 32 57@2x" src="https://github.com/user-attachments/assets/edf49eaa-af45-4e17-bf97-7443ae34475f" />
+
 
 
 ```bash
