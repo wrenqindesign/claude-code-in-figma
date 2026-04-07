@@ -74,16 +74,14 @@ A terminal panel opens inside Figma, connected to Claude Code.
 
 ## FAQ
 
-**macOS says the app is damaged or from an unidentified developer?**
-This is a macOS security restriction, not actual damage. To fix it:
-1. Open **System Settings → Privacy & Security**
-2. Find the blocked app notice and click **"Open Anyway"**
+**macOS says the app is "damaged and can't be opened"?**
+This is a macOS Gatekeeper quarantine flag — not actual damage. The app is unsigned, so macOS blocks it on download. Fix it by removing the quarantine attribute in Terminal:
 
-Or run this in Terminal to allow apps from any source:
 ```bash
-sudo spctl --master-disable
+xattr -cr "/Applications/Claude Code in Figma.app"
 ```
-Then go to **System Settings → Privacy & Security → Allow applications from** and select "Anywhere".
+
+Then launch the app normally. You do **not** need to disable Gatekeeper or change any system settings.
 
 **Plugin says it can't connect?**
 Make sure the bridge app is running and its menubar icon is visible. The plugin communicates via `localhost:9528`.
