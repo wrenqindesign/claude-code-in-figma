@@ -21,7 +21,7 @@ Run a full Claude Code terminal directly inside Figma.
 
 ### Bridge app
 
-The recommended install path is a one-line script that downloads the packaged app, installs it into `~/Applications`, removes macOS quarantine, and launches it:
+The recommended install path is a one-line script that installs the bridge app into `~/Applications`, removes macOS quarantine, and launches it:
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/wrenqindesign/claude-code-in-figma/main/install.sh | bash
@@ -30,20 +30,8 @@ curl -fsSL https://raw.githubusercontent.com/wrenqindesign/claude-code-in-figma/
 Notes:
 
 - This installer currently targets **macOS Apple Silicon (arm64)**.
-- It installs the packaged app, not the source code.
 - Claude Code CLI still needs to be installed and logged in separately.
 - It installs to `~/Applications/Claude Code in Figma.app`.
-
-### Release assets
-
-If you prefer to download files manually, go to **[Releases](../../releases/latest)** and use these assets:
-
-| File | Description |
-|------|-------------|
-| `Claude.Code.in.Figma-0.1.0-arm64.dmg` | Local bridge app (menubar) |
-| `figma-plugin-v0.1.0.zip` | Figma plugin files |
-
-> Only download the first two files. The **Source code** entries are added by GitHub automatically and are not needed.
 
 ---
 
@@ -60,21 +48,19 @@ claude  # follow the login prompts
 
 ### Step 2 — Install the bridge app
 
-If you used the install script above, this step is already done.
+Run the install command above. It installs the bridge app automatically.
 
 The bridge app handles communication between Claude Code and the Figma plugin. It also displays your Claude Code usage quota and reset status in the menubar.
 
 <img width="536" height="524" alt="Claude Code in Figma menubar app" src="https://github.com/user-attachments/assets/b2621837-5b1d-41dc-9d55-86bad1ad269c" />
 
-1. Open the downloaded app package and drag **Claude Code in Figma** into your Applications folder
-2. Launch the app — a menubar icon will appear in the top-right
-3. Keep it running in the background
+After installation, a menubar icon will appear when the app is open. Keep it running in the background while using the Figma plugin.
 
 ### Step 3 — Install the Figma plugin
 
 <img width="1704" height="1208" alt="Import plugin from manifest" src="https://github.com/user-attachments/assets/c9a45f15-ec84-4f7a-bf6b-0b370fb8e30f" />
 
-1. Download and unzip `figma-plugin-v0.1.0.zip` anywhere (e.g. your Desktop)
+1. Download and unzip `figma-plugin-v0.1.0.zip` from **[Releases](../../releases/latest)** anywhere (e.g. your Desktop)
 2. Open the **Figma desktop app**
 3. Go to **Menu → Plugins → Development → Import plugin from manifest…**
 4. Select the `manifest.json` inside the unzipped folder
@@ -117,8 +103,8 @@ claude --version
 
 **macOS says the app is damaged or from an unidentified developer?**
 This is a macOS security restriction, not actual damage. To fix it:
-1. Prefer the install script above, which removes the quarantine flag automatically
-2. If you installed manually, run:
+1. Use the install command above, which removes the quarantine flag automatically
+2. If macOS still blocks launch after installation, run:
 
 ```bash
 xattr -dr com.apple.quarantine "$HOME/Applications/Claude Code in Figma.app"

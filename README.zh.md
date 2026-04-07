@@ -19,7 +19,7 @@
 
 ### 桥接应用
 
-推荐使用一条命令完成安装。它会下载已经打包好的成品 app，安装到 `~/Applications`，移除 macOS quarantine，并自动启动：
+推荐使用一条命令完成安装。它会把桥接应用安装到 `~/Applications`，移除 macOS quarantine，并自动启动：
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/wrenqindesign/claude-code-in-figma/main/install.sh | bash
@@ -28,20 +28,8 @@ curl -fsSL https://raw.githubusercontent.com/wrenqindesign/claude-code-in-figma/
 说明：
 
 - 当前安装脚本只支持 **macOS Apple Silicon（arm64）**
-- 安装的是打包好的 app，不是源码
 - 你仍然需要单独安装并登录 Claude Code CLI
 - 安装路径默认是 `~/Applications/Claude Code in Figma.app`
-
-### Release 文件
-
-如果你想手动下载，可以在 **[Releases](../../releases/latest)** 页面获取以下文件：
-
-| 文件 | 说明 |
-|------|------|
-| `Claude.Code.in.Figma-0.1.0-arm64.dmg` | 本地桥接应用（menubar app） |
-| `figma-plugin-v0.1.0.zip` | Figma 插件文件 |
-
-> 只需下载前两个文件，**Source code** 是 GitHub 自动附加的，无需下载。
 
 ---
 
@@ -58,21 +46,19 @@ claude  # 按提示登录
 
 ### 第二步：安装桥接应用
 
-如果你已经使用上面的安装脚本，这一步已经完成。
+运行上面的安装命令即可自动安装桥接应用。
 
 该桥接应用除了承担与本地 Claude Code 和 Figma Plugin 的通信，也可以显示你的 Claude Code 使用额度与重置等 usage，与后台一致。
 
 <img width="536" height="524" alt="Claude Code in Figma menubar app" src="https://github.com/user-attachments/assets/b2621837-5b1d-41dc-9d55-86bad1ad269c" />
 
-1. 打开下载好的应用包，将 **Claude Code in Figma** 拖入 Applications 文件夹
-2. 启动 **Claude Code in Figma**，菜单栏右上角会出现图标
-3. 保持它在后台运行
+安装完成后，打开应用就会在菜单栏右上角出现图标。使用 Figma 插件时请保持它在后台运行。
 
 ### 第三步：安装 Figma 插件
 
 <img width="1704" height="1208" alt="从 manifest 导入插件" src="https://github.com/user-attachments/assets/c9a45f15-ec84-4f7a-bf6b-0b370fb8e30f" />
 
-1. 下载 `figma-plugin-v0.1.0.zip`，解压到任意位置（例如桌面）
+1. 从 **[Releases](../../releases/latest)** 下载 `figma-plugin-v0.1.0.zip`，解压到任意位置（例如桌面）
 2. 打开 **Figma 桌面版**
 3. 顶部菜单 → **Plugins → Development → Import plugin from manifest…**
 4. 选择解压后文件夹里的 `manifest.json`
@@ -115,8 +101,8 @@ claude --version
 
 **Mac 提示应用已损坏或来自不明开发者，无法打开？**
 这是 macOS 的安全限制，并非真的损坏。解决方法：
-1. 优先使用上面的安装脚本，它会自动移除 quarantine
-2. 如果你是手动安装，请在终端运行：
+1. 使用上面的安装命令，它会自动移除 quarantine
+2. 如果安装后仍然被系统拦截，请在终端运行：
 
 ```bash
 xattr -dr com.apple.quarantine "$HOME/Applications/Claude Code in Figma.app"
