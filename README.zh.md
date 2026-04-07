@@ -53,7 +53,7 @@ curl -fsSL https://raw.githubusercontent.com/wrenqindesign/claude-code-in-figma/
 
 说明：
 
-- 当前安装脚本只支持 **macOS Apple Silicon（arm64）**
+- 安装脚本会自动为 **Apple Silicon（`arm64`）** 和 **Intel（`x86_64`）** Mac 选择对应版本
 - 你仍然需要单独安装并登录 Claude Code CLI
 - 安装路径默认是 `~/Applications/Claude Code in Figma.app`
 

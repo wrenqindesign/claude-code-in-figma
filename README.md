@@ -57,7 +57,7 @@ curl -fsSL https://raw.githubusercontent.com/wrenqindesign/claude-code-in-figma/
 
 Notes:
 
-- This installer currently targets **macOS Apple Silicon (arm64)**.
+- This installer automatically selects the correct build for **Apple Silicon (`arm64`)** and **Intel (`x86_64`)** Macs.
 - Claude Code CLI still needs to be installed and logged in separately.
 - It installs to `~/Applications/Claude Code in Figma.app`.
 

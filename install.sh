@@ -4,9 +4,6 @@ set -euo pipefail
 REPO="wrenqindesign/claude-code-in-figma"
 VERSION="0.1.0"
 APP_NAME="Claude Code in Figma.app"
-ASSET_NAME="Claude-Code-in-Figma-0.1.0-arm64.zip"
-ASSET_SHA256="818dd5bbcfc5ee4eb5e3133cf593d909b39fd0b65834afef735ec1ea18b3507e"
-DOWNLOAD_URL="https://github.com/${REPO}/releases/download/v${VERSION}/${ASSET_NAME}"
 INSTALL_DIR="${INSTALL_DIR:-${HOME}/Applications}"
 OPEN_AFTER_INSTALL="${OPEN_AFTER_INSTALL:-1}"
 
@@ -16,10 +13,22 @@ if [[ "$(uname -s)" != "Darwin" ]]; then
 fi
 
 ARCH="$(uname -m)"
-if [[ "${ARCH}" != "arm64" ]]; then
-  echo "This release currently only provides an Apple Silicon build (arm64)." >&2
-  exit 1
-fi
+case "${ARCH}" in
+  arm64)
+    ASSET_NAME="Claude-Code-in-Figma-0.1.0-arm64.zip"
+    ASSET_SHA256="818dd5bbcfc5ee4eb5e3133cf593d909b39fd0b65834afef735ec1ea18b3507e"
+    ;;
+  x86_64)
+    ASSET_NAME="Claude-Code-in-Figma-0.1.0-x64.zip"
+    ASSET_SHA256="963cbec0443082e24f0161c788aa53db17cf835243fe985e455fbcf4dc46286d"
+    ;;
+  *)
+    echo "Unsupported macOS architecture: ${ARCH}" >&2
+    exit 1
+    ;;
+esac
+
+DOWNLOAD_URL="https://github.com/${REPO}/releases/download/v${VERSION}/${ASSET_NAME}"
 
 if ! command -v curl >/dev/null 2>&1; then
   echo "curl is required but not installed." >&2
