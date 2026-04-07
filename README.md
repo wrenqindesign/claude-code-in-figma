@@ -48,7 +48,11 @@ claude  # follow the login prompts
 
 ### Step 2 — Install the bridge app
 
-Run the install command above. It installs the bridge app automatically.
+Run this command. It installs the bridge app automatically.
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/wrenqindesign/claude-code-in-figma/main/install.sh | bash
+```
 
 The bridge app handles communication between Claude Code and the Figma plugin. It also displays your Claude Code usage quota and reset status in the menubar.
 

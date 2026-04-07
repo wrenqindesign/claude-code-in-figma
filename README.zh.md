@@ -46,7 +46,11 @@ claude  # 按提示登录
 
 ### 第二步：安装桥接应用
 
-运行上面的安装命令即可自动安装桥接应用。
+运行这条命令即可自动安装桥接应用。
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/wrenqindesign/claude-code-in-figma/main/install.sh | bash
+```
 
 该桥接应用除了承担与本地 Claude Code 和 Figma Plugin 的通信，也可以显示你的 Claude Code 使用额度与重置等 usage，与后台一致。
 
