@@ -1,5 +1,7 @@
 # Claude Code in Figma
 
+[English](README.en.md) | 中文
+
 在 Figma 设计稿里直接运行 Claude Code 终端。
 
 > **系统要求：** macOS（Apple Silicon 或 Intel）· Figma 桌面版 · 已安装并登录 Claude Code CLI
@@ -72,6 +74,15 @@ sudo spctl --master-disable
 
 **我的代码会上传到服务器吗？**
 不会。桥接应用只连接本地 `localhost:9528`，所有数据在你的电脑上处理。
+
+---
+
+## 贡献者
+
+| | 贡献者 | 角色 |
+|---|---|---|
+| | [@wrenqindesign](https://github.com/wrenqindesign) | 作者 |
+| 🤖 | [Claude Code](https://claude.ai/code) | AI 协作开发 |
 
 ---
 

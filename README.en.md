@@ -1,5 +1,7 @@
 # Claude Code in Figma
 
+[中文](README.md) | English
+
 Run a full Claude Code terminal directly inside Figma.
 
 > **Requirements:** macOS (Apple Silicon or Intel) · Figma desktop app · Claude Code CLI installed and authenticated
@@ -72,6 +74,15 @@ Yes, for now. Windows support is not available yet.
 
 **Is my code sent to any server?**
 No. The bridge app only connects to local `localhost:9528`. Everything stays on your machine.
+
+---
+
+## Contributors
+
+| | Contributor | Role |
+|---|---|---|
+| | [@wrenqindesign](https://github.com/wrenqindesign) | Author |
+| 🤖 | [Claude Code](https://claude.ai/code) | AI co-developer |
 
 ---
 
