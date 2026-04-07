@@ -32,6 +32,7 @@ Notes:
 - This installer currently targets **macOS Apple Silicon (arm64)**.
 - It installs the packaged app, not the source code.
 - Claude Code CLI still needs to be installed and logged in separately.
+- It installs to `~/Applications/Claude Code in Figma.app`.
 
 ### Release assets
 
@@ -88,6 +89,28 @@ Make sure the bridge app is running, then in Figma:
 
 A terminal panel opens inside Figma, connected to Claude Code.
 
+### Open it again later
+
+If you quit the menubar app and want to reopen it later, run:
+
+```bash
+open "$HOME/Applications/Claude Code in Figma.app"
+```
+
+Or open **Claude Code in Figma.app** from Finder in `~/Applications`.
+
+### Verify the install
+
+These checks should succeed on a healthy install:
+
+```bash
+find "$HOME/Applications/Claude Code in Figma.app" -path '*libffmpeg.dylib'
+```
+
+```bash
+claude --version
+```
+
 ---
 
 ## FAQ
@@ -103,6 +126,23 @@ xattr -dr com.apple.quarantine "$HOME/Applications/Claude Code in Figma.app"
 
 **Plugin says it can't connect?**
 Make sure the bridge app is running and its menubar icon is visible. The plugin communicates via `localhost:9528`.
+
+**The menubar app quits unexpectedly right after opening**
+You are probably still running an older broken build. Remove it and reinstall:
+
+```bash
+rm -rf "$HOME/Applications/Claude Code in Figma.app"
+curl -fsSL https://raw.githubusercontent.com/wrenqindesign/claude-code-in-figma/main/install.sh | bash
+```
+
+Then verify the fixed runtime library exists:
+
+```bash
+find "$HOME/Applications/Claude Code in Figma.app" -path '*libffmpeg.dylib'
+```
+
+**How do I start it automatically on login?**
+Go to **System Settings → General → Login Items** and add **Claude Code in Figma.app**.
 
 **macOS only?**
 Yes, for now. Windows support is not available yet.

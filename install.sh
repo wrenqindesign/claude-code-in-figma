@@ -59,6 +59,12 @@ cp -R "${TMP_DIR}/expanded/${APP_NAME}" "${INSTALL_DIR}/${APP_NAME}"
 xattr -dr com.apple.quarantine "${INSTALL_DIR}/${APP_NAME}" || true
 
 echo "Installed to ${INSTALL_DIR}/${APP_NAME}"
+echo
+echo "To open it again later:"
+echo "  open \"${INSTALL_DIR}/${APP_NAME}\""
+echo
+echo "Then in Figma run:"
+echo "  Plugins -> Development -> Claude Code in Figma"
 
 if ! command -v claude >/dev/null 2>&1; then
   cat <<'EOF'

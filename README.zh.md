@@ -30,6 +30,7 @@ curl -fsSL https://raw.githubusercontent.com/wrenqindesign/claude-code-in-figma/
 - 当前安装脚本只支持 **macOS Apple Silicon（arm64）**
 - 安装的是打包好的 app，不是源码
 - 你仍然需要单独安装并登录 Claude Code CLI
+- 安装路径默认是 `~/Applications/Claude Code in Figma.app`
 
 ### Release 文件
 
@@ -86,6 +87,28 @@ claude  # 按提示登录
 
 插件面板打开，即可在 Figma 内使用 Claude Code。
 
+### 以后再次打开
+
+如果你退出了 menubar app，之后可以运行：
+
+```bash
+open "$HOME/Applications/Claude Code in Figma.app"
+```
+
+或者在 Finder 的 `~/Applications` 里双击 **Claude Code in Figma.app**。
+
+### 验证安装是否正常
+
+下面两条命令应该都能正常工作：
+
+```bash
+find "$HOME/Applications/Claude Code in Figma.app" -path '*libffmpeg.dylib'
+```
+
+```bash
+claude --version
+```
+
 ---
 
 ## 常见问题
@@ -101,6 +124,23 @@ xattr -dr com.apple.quarantine "$HOME/Applications/Claude Code in Figma.app"
 
 **插件提示无法连接？**
 确认 **Claude Code in Figma**（桥接应用）已启动，菜单栏图标可见。插件通过 `localhost:9528` 与桥接应用通信。
+
+**应用一打开就闪退，出现 Problem Report 窗口？**
+大概率还是旧的错误安装包。先删除旧版，再重新安装：
+
+```bash
+rm -rf "$HOME/Applications/Claude Code in Figma.app"
+curl -fsSL https://raw.githubusercontent.com/wrenqindesign/claude-code-in-figma/main/install.sh | bash
+```
+
+然后确认修复后的动态库存在：
+
+```bash
+find "$HOME/Applications/Claude Code in Figma.app" -path '*libffmpeg.dylib'
+```
+
+**如何开机自动启动？**
+打开 **系统设置 → 通用 → 登录项**，把 **Claude Code in Figma.app** 加进去。
 
 **只支持 macOS 吗？**
 目前只有 macOS 版本。
