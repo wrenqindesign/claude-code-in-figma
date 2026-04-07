@@ -73,19 +73,13 @@ claude  # 按提示登录
 ## 常见问题
 
 **Mac 提示「应用已损坏，无法打开」？**
-这是 macOS Gatekeeper 的隔离标记问题，并非真的损坏。应用未签名，macOS 会在下载时自动打上隔离标记。
+这是 macOS Gatekeeper 的隔离标记问题，并非真的损坏。应用未签名，macOS 会在下载时自动加上隔离标记。在终端运行以下命令移除即可：
 
-**方法一 — 安装前处理（推荐）：** 先对 DMG 文件解除隔离，再拖入 Applications：
 ```bash
-xattr -cr ~/Downloads/Figent-*.dmg
+xattr -cr "/Applications/Claude Code in Figma.app"
 ```
 
-**方法二 — 已安装后处理：** 直接对 Applications 里的应用解除：
-```bash
-sudo xattr -rd com.apple.quarantine /Applications/Figent.app
-```
-
-**无需**关闭 Gatekeeper 或修改任何系统设置。
+之后正常启动应用，**无需**关闭 Gatekeeper 或修改任何系统设置。
 
 **插件提示无法连接？**
 确认 Figent（桥接应用）已启动，菜单栏图标可见。插件通过 `localhost:9528` 与桥接应用通信。
