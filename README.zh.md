@@ -99,32 +99,6 @@ claude --version
 
 ## 常见问题
 
-**Mac 提示应用已损坏或来自不明开发者，无法打开？**
-这是 macOS 的安全限制，并非真的损坏。解决方法：
-1. 使用上面的安装命令，它会自动移除 quarantine
-2. 如果安装后仍然被系统拦截，请在终端运行：
-
-```bash
-xattr -dr com.apple.quarantine "$HOME/Applications/Claude Code in Figma.app"
-```
-
-**插件提示无法连接？**
-确认 **Claude Code in Figma**（桥接应用）已启动，菜单栏图标可见。插件通过 `localhost:9528` 与桥接应用通信。
-
-**应用一打开就闪退，出现 Problem Report 窗口？**
-大概率还是旧的错误安装包。先删除旧版，再重新安装：
-
-```bash
-rm -rf "$HOME/Applications/Claude Code in Figma.app"
-curl -fsSL https://raw.githubusercontent.com/wrenqindesign/claude-code-in-figma/main/install.sh | bash
-```
-
-然后确认修复后的动态库存在：
-
-```bash
-find "$HOME/Applications/Claude Code in Figma.app" -path '*libffmpeg.dylib'
-```
-
 **如何开机自动启动？**
 打开 **系统设置 → 通用 → 登录项**，把 **Claude Code in Figma.app** 加进去。
 

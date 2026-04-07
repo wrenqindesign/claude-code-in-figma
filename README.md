@@ -101,32 +101,6 @@ claude --version
 
 ## FAQ
 
-**macOS says the app is damaged or from an unidentified developer?**
-This is a macOS security restriction, not actual damage. To fix it:
-1. Use the install command above, which removes the quarantine flag automatically
-2. If macOS still blocks launch after installation, run:
-
-```bash
-xattr -dr com.apple.quarantine "$HOME/Applications/Claude Code in Figma.app"
-```
-
-**Plugin says it can't connect?**
-Make sure the bridge app is running and its menubar icon is visible. The plugin communicates via `localhost:9528`.
-
-**The menubar app quits unexpectedly right after opening**
-You are probably still running an older broken build. Remove it and reinstall:
-
-```bash
-rm -rf "$HOME/Applications/Claude Code in Figma.app"
-curl -fsSL https://raw.githubusercontent.com/wrenqindesign/claude-code-in-figma/main/install.sh | bash
-```
-
-Then verify the fixed runtime library exists:
-
-```bash
-find "$HOME/Applications/Claude Code in Figma.app" -path '*libffmpeg.dylib'
-```
-
 **How do I start it automatically on login?**
 Go to **System Settings → General → Login Items** and add **Claude Code in Figma.app**.
 
