@@ -5,7 +5,6 @@ English | [中文](README.zh.md)
 Run a full Claude Code terminal directly inside Figma.
 
 [![GitHub Sponsors](https://img.shields.io/github/sponsors/wrenqindesign?style=flat&logo=githubsponsors&color=EA4AAA)](https://github.com/sponsors/wrenqindesign)
-![Uploading CleanShot 2026-04-07 at 16.46.55@2x.png…]()
 
 
 > **Requirements:** macOS (Apple Silicon or Intel) · Figma desktop app · Claude Code CLI installed and authenticated
@@ -13,6 +12,8 @@ Run a full Claude Code terminal directly inside Figma.
 ---
 
 ## Features
+<img width="3356" height="2214" alt="CleanShot 2026-04-07 at 16 46 55@2x" src="https://github.com/user-attachments/assets/fdf1e949-5cc1-4d45-85a1-4b7447eb4d71" />
+
 
 - **Terminal inside Figma** — full Claude Code session without leaving your design tool
 - **Theme sync** — the plugin and menubar app both support Light, Dark, and System modes, automatically following your macOS appearance setting
