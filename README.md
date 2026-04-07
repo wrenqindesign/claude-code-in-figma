@@ -60,7 +60,8 @@ The bridge app handles communication between Claude Code and the Figma plugin. I
 
 ### Step 4 — Run
 
-<img width="1348" height="1652" alt="Claude Code in Figma running" src="https://github.com/user-attachments/assets/b0fb561b-b85a-45c4-a4b3-5262b60b8358" />
+<img width="1358" height="1662" alt="CleanShot 2026-04-07 at 11 49 38@2x" src="https://github.com/user-attachments/assets/7538017e-aece-4fe2-b6fb-5cd9b5924334" />
+
 
 Make sure Figent is running, then in Figma:
 
