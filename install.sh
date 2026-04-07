@@ -20,7 +20,7 @@ case "${ARCH}" in
     ;;
   x86_64)
     ASSET_NAME="Claude-Code-in-Figma-0.1.0-x64.zip"
-    ASSET_SHA256="963cbec0443082e24f0161c788aa53db17cf835243fe985e455fbcf4dc46286d"
+    ASSET_SHA256="5aaaac44be503c455e5c091ad2db8d31e211a366f4365a44c4d24ac1d050734c"
     ;;
   *)
     echo "Unsupported macOS architecture: ${ARCH}" >&2
