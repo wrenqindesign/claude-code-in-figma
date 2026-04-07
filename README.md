@@ -23,8 +23,8 @@ Go to **[Releases](../../releases/latest)** on the right and download the latest
 
 | File | Description |
 |------|-------------|
-| `Claude Code in Figma-x.x.x-arm64.dmg` | Local bridge app (menubar) |
-| `figma-plugin-vx.x.x.zip` | Figma plugin files |
+| `Claude.Code.in.Figma-0.1.0-arm64.dmg` | Local bridge app (menubar) |
+| `figma-plugin-v0.1.0.zip` | Figma plugin files |
 
 > Only download the first two files. The **Source code** entries are added by GitHub automatically and are not needed.
 
@@ -55,7 +55,7 @@ The bridge app handles communication between Claude Code and the Figma plugin. I
 
 <img width="1704" height="1208" alt="Import plugin from manifest" src="https://github.com/user-attachments/assets/c9a45f15-ec84-4f7a-bf6b-0b370fb8e30f" />
 
-1. Download and unzip `figma-plugin-vx.x.x.zip` anywhere (e.g. your Desktop)
+1. Download and unzip `figma-plugin-v0.1.0.zip` anywhere (e.g. your Desktop)
 2. Open the **Figma desktop app**
 3. Go to **Menu → Plugins → Development → Import plugin from manifest…**
 4. Select the `manifest.json` inside the unzipped folder

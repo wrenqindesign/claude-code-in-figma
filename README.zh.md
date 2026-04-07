@@ -21,8 +21,8 @@
 
 | 文件 | 说明 |
 |------|------|
-| `Figent-x.x.x-arm64.dmg` | 本地桥接应用（menubar app） |
-| `figma-plugin-vx.x.x.zip` | Figma 插件文件 |
+| `Claude.Code.in.Figma-0.1.0-arm64.dmg` | 本地桥接应用（menubar app） |
+| `figma-plugin-v0.1.0.zip` | Figma 插件文件 |
 
 > 只需下载前两个文件，**Source code** 是 GitHub 自动附加的，无需下载。
 
@@ -43,17 +43,17 @@ claude  # 按提示登录
 
 该桥接应用除了承担与本地 Claude Code 和 Figma Plugin 的通信，也可以显示你的 Claude Code 使用额度与重置等 usage，与后台一致。
 
-<img width="536" height="524" alt="Figent menubar app" src="https://github.com/user-attachments/assets/b2621837-5b1d-41dc-9d55-86bad1ad269c" />
+<img width="536" height="524" alt="Claude Code in Figma menubar app" src="https://github.com/user-attachments/assets/b2621837-5b1d-41dc-9d55-86bad1ad269c" />
 
-1. 下载 `.dmg` 文件，打开后将 **Figent** 拖入 Applications 文件夹
-2. 启动 Figent，菜单栏右上角会出现图标
+1. 下载 `.dmg` 文件，打开后将 **Claude Code in Figma** 拖入 Applications 文件夹
+2. 启动 **Claude Code in Figma**，菜单栏右上角会出现图标
 3. 保持它在后台运行
 
 ### 第三步：安装 Figma 插件
 
 <img width="1704" height="1208" alt="从 manifest 导入插件" src="https://github.com/user-attachments/assets/c9a45f15-ec84-4f7a-bf6b-0b370fb8e30f" />
 
-1. 下载 `figma-plugin-vx.x.x.zip`，解压到任意位置（例如桌面）
+1. 下载 `figma-plugin-v0.1.0.zip`，解压到任意位置（例如桌面）
 2. 打开 **Figma 桌面版**
 3. 顶部菜单 → **Plugins → Development → Import plugin from manifest…**
 4. 选择解压后文件夹里的 `manifest.json`
@@ -62,7 +62,7 @@ claude  # 按提示登录
 
 <img width="1348" height="1652" alt="Claude Code in Figma 运行中" src="https://github.com/user-attachments/assets/b0fb561b-b85a-45c4-a4b3-5262b60b8358" />
 
-确认 Figent 正在运行后，在 Figma 里：
+确认 **Claude Code in Figma** 正在运行后，在 Figma 里：
 
 **Plugins → Development → Claude Code in Figma**
 
@@ -84,7 +84,7 @@ sudo spctl --master-disable
 之后在 **系统设置 → 隐私与安全性 → 允许以下来源的应用** 中选择「任何来源」。
 
 **插件提示无法连接？**
-确认 Figent（桥接应用）已启动，菜单栏图标可见。插件通过 `localhost:9528` 与桥接应用通信。
+确认 **Claude Code in Figma**（桥接应用）已启动，菜单栏图标可见。插件通过 `localhost:9528` 与桥接应用通信。
 
 **只支持 macOS 吗？**
 目前只有 macOS 版本。
