@@ -77,15 +77,6 @@ No. The bridge app only connects to local `localhost:9528`. Everything stays on 
 
 ---
 
-## Contributors
-
-| | Contributor | Role |
-|---|---|---|
-| | [@wrenqindesign](https://github.com/wrenqindesign) | Author |
-| 🤖 | [Claude Code](https://claude.ai/code) | AI co-developer |
-
----
-
 ## Feedback
 
 [Open an Issue](../../issues) · [Download stats](../../releases)

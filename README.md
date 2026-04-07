@@ -77,15 +77,6 @@ sudo spctl --master-disable
 
 ---
 
-## 贡献者
-
-| | 贡献者 | 角色 |
-|---|---|---|
-| | [@wrenqindesign](https://github.com/wrenqindesign) | 作者 |
-| 🤖 | [Claude Code](https://claude.ai/code) | AI 协作开发 |
-
----
-
 ## 问题反馈
 
 [提交 Issue](../../issues) · [查看下载统计](../../releases)
