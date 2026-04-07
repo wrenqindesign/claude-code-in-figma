@@ -1,0 +1,13 @@
+{
+  "name": "Claude Code in Figma",
+  "id": "claude-code-in-figma-dev",
+  "api": "1.0.0",
+  "main": "code.js",
+  "ui": "ui.html",
+  "editorType": ["figma", "figjam"],
+  "networkAccess": {
+    "allowedDomains": ["http://localhost:9528"],
+    "devAllowedDomains": ["http://localhost:9528"],
+    "reasoning": "Connects to the local desktop bridge HTTP poll server for Claude Code terminal relay"
+  }
+}
