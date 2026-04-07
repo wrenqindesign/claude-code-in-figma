@@ -15,9 +15,25 @@
 
 ---
 
-## 下载
+## 安装
 
-在右侧 **[Releases](../../releases/latest)** 页面下载最新版本，包含两个文件：
+### 桥接应用
+
+推荐使用一条命令完成安装。它会下载已经打包好的成品 app，安装到 `~/Applications`，移除 macOS quarantine，并自动启动：
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/wrenqindesign/claude-code-in-figma/main/install.sh | bash
+```
+
+说明：
+
+- 当前安装脚本只支持 **macOS Apple Silicon（arm64）**
+- 安装的是打包好的 app，不是源码
+- 你仍然需要单独安装并登录 Claude Code CLI
+
+### Release 文件
+
+如果你想手动下载，可以在 **[Releases](../../releases/latest)** 页面获取以下文件：
 
 | 文件 | 说明 |
 |------|------|
@@ -41,11 +57,13 @@ claude  # 按提示登录
 
 ### 第二步：安装桥接应用
 
+如果你已经使用上面的安装脚本，这一步已经完成。
+
 该桥接应用除了承担与本地 Claude Code 和 Figma Plugin 的通信，也可以显示你的 Claude Code 使用额度与重置等 usage，与后台一致。
 
 <img width="536" height="524" alt="Claude Code in Figma menubar app" src="https://github.com/user-attachments/assets/b2621837-5b1d-41dc-9d55-86bad1ad269c" />
 
-1. 下载 `.dmg` 文件，打开后将 **Claude Code in Figma** 拖入 Applications 文件夹
+1. 打开下载好的应用包，将 **Claude Code in Figma** 拖入 Applications 文件夹
 2. 启动 **Claude Code in Figma**，菜单栏右上角会出现图标
 3. 保持它在后台运行
 
@@ -74,14 +92,12 @@ claude  # 按提示登录
 
 **Mac 提示应用已损坏或来自不明开发者，无法打开？**
 这是 macOS 的安全限制，并非真的损坏。解决方法：
-1. 打开 **系统设置 → 隐私与安全性**
-2. 在「安全性」部分找到被拦截的提示，点击 **「仍要打开」**
+1. 优先使用上面的安装脚本，它会自动移除 quarantine
+2. 如果你是手动安装，请在终端运行：
 
-或者在终端运行以下命令，允许任意来源的应用：
 ```bash
-sudo spctl --master-disable
+xattr -dr com.apple.quarantine "$HOME/Applications/Claude Code in Figma.app"
 ```
-之后在 **系统设置 → 隐私与安全性 → 允许以下来源的应用** 中选择「任何来源」。
 
 **插件提示无法连接？**
 确认 **Claude Code in Figma**（桥接应用）已启动，菜单栏图标可见。插件通过 `localhost:9528` 与桥接应用通信。

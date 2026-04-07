@@ -17,9 +17,25 @@ Run a full Claude Code terminal directly inside Figma.
 
 ---
 
-## Download
+## Install
 
-Go to **[Releases](../../releases/latest)** on the right and download the latest version. You need two files:
+### Bridge app
+
+The recommended install path is a one-line script that downloads the packaged app, installs it into `~/Applications`, removes macOS quarantine, and launches it:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/wrenqindesign/claude-code-in-figma/main/install.sh | bash
+```
+
+Notes:
+
+- This installer currently targets **macOS Apple Silicon (arm64)**.
+- It installs the packaged app, not the source code.
+- Claude Code CLI still needs to be installed and logged in separately.
+
+### Release assets
+
+If you prefer to download files manually, go to **[Releases](../../releases/latest)** and use these assets:
 
 | File | Description |
 |------|-------------|
@@ -43,11 +59,13 @@ claude  # follow the login prompts
 
 ### Step 2 — Install the bridge app
 
+If you used the install script above, this step is already done.
+
 The bridge app handles communication between Claude Code and the Figma plugin. It also displays your Claude Code usage quota and reset status in the menubar.
 
 <img width="536" height="524" alt="Claude Code in Figma menubar app" src="https://github.com/user-attachments/assets/b2621837-5b1d-41dc-9d55-86bad1ad269c" />
 
-1. Open the `.dmg` file and drag **Claude Code in Figma** into your Applications folder
+1. Open the downloaded app package and drag **Claude Code in Figma** into your Applications folder
 2. Launch the app — a menubar icon will appear in the top-right
 3. Keep it running in the background
 
@@ -76,14 +94,12 @@ A terminal panel opens inside Figma, connected to Claude Code.
 
 **macOS says the app is damaged or from an unidentified developer?**
 This is a macOS security restriction, not actual damage. To fix it:
-1. Open **System Settings → Privacy & Security**
-2. Find the blocked app notice and click **"Open Anyway"**
+1. Prefer the install script above, which removes the quarantine flag automatically
+2. If you installed manually, run:
 
-Or run this in Terminal to allow apps from any source:
 ```bash
-sudo spctl --master-disable
+xattr -dr com.apple.quarantine "$HOME/Applications/Claude Code in Figma.app"
 ```
-Then go to **System Settings → Privacy & Security → Allow applications from** and select "Anywhere".
 
 **Plugin says it can't connect?**
 Make sure the bridge app is running and its menubar icon is visible. The plugin communicates via `localhost:9528`.
