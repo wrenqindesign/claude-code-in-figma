@@ -31,6 +31,7 @@ claude  # 按提示登录
 ```
 
 ### 第二步：安装桥接应用
+<img width="536" height="524" alt="CleanShot 2026-04-07 at 11 24 22@2x" src="https://github.com/user-attachments/assets/b2621837-5b1d-41dc-9d55-86bad1ad269c" />
 
 1. 下载 `.dmg` 文件，打开后将 **Figent** 拖入 Applications 文件夹
 2. 启动 Figent，菜单栏右上角会出现图标
@@ -38,12 +39,20 @@ claude  # 按提示登录
 
 ### 第三步：安装 Figma 插件
 
+<img width="1704" height="1208" alt="CleanShot 2026-04-07 at 11 28 05@2x" src="https://github.com/user-attachments/assets/c9a45f15-ec84-4f7a-bf6b-0b370fb8e30f" />
+
+
+
 1. 下载 `figma-plugin-vx.x.x.zip`，解压到任意位置（例如桌面）
 2. 打开 **Figma 桌面版**
 3. 顶部菜单 → **Plugins → Development → Import plugin from manifest…**
 4. 选择解压后文件夹里的 `manifest.json`
 
 ### 第四步：运行
+
+<img width="1348" height="1652" alt="CleanShot 2026-04-07 at 11 30 52@2x" src="https://github.com/user-attachments/assets/b0fb561b-b85a-45c4-a4b3-5262b60b8358" />
+
+
 
 确认 Figent 正在运行后，在 Figma 里：
 
