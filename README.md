@@ -31,6 +31,8 @@ claude  # 按提示登录
 ```
 
 ### 第二步：安装桥接应用
+
+（该桥接应用除了承担与本地 Claude Code 和 Figma Plugin 的通信，也可以显示你的 Claude Code 使用额度与重置等 usage，与后台一致）
 <img width="536" height="524" alt="CleanShot 2026-04-07 at 11 24 22@2x" src="https://github.com/user-attachments/assets/b2621837-5b1d-41dc-9d55-86bad1ad269c" />
 
 1. 下载 `.dmg` 文件，打开后将 **Figent** 拖入 Applications 文件夹
