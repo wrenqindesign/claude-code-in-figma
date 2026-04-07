@@ -5,6 +5,8 @@ English | [中文](README.zh.md)
 Run a full Claude Code terminal directly inside Figma.
 
 [![GitHub Sponsors](https://img.shields.io/github/sponsors/wrenqindesign?style=flat&logo=githubsponsors&color=EA4AAA)](https://github.com/sponsors/wrenqindesign)
+![Uploading CleanShot 2026-04-07 at 16.46.55@2x.png…]()
+
 
 > **Requirements:** macOS (Apple Silicon or Intel) · Figma desktop app · Claude Code CLI installed and authenticated
 
