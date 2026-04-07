@@ -75,13 +75,19 @@ A terminal panel opens inside Figma, connected to Claude Code.
 ## FAQ
 
 **macOS says the app is "damaged and can't be opened"?**
-This is a macOS Gatekeeper quarantine flag — not actual damage. The app is unsigned, so macOS blocks it on download. Fix it by removing the quarantine attribute in Terminal:
+This is a macOS Gatekeeper quarantine flag — not actual damage. The app is unsigned, so macOS blocks it on download.
 
+**Option A — before installing (recommended):** remove the flag from the DMG first, then drag to Applications as usual:
 ```bash
-xattr -cr "/Applications/Claude Code in Figma.app"
+xattr -cr ~/Downloads/Figent-*.dmg
 ```
 
-Then launch the app normally. You do **not** need to disable Gatekeeper or change any system settings.
+**Option B — already installed:** remove the flag from the app directly:
+```bash
+sudo xattr -rd com.apple.quarantine /Applications/Figent.app
+```
+
+You do **not** need to disable Gatekeeper or change any system settings.
 
 **Plugin says it can't connect?**
 Make sure the bridge app is running and its menubar icon is visible. The plugin communicates via `localhost:9528`.
