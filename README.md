@@ -17,6 +17,29 @@ Run a full Claude Code terminal directly inside Figma.
 
 ---
 
+## Product Overview
+
+Claude Code in Figma connects your design workspace and your local coding workspace. It lets designers, engineers, and solo builders run a real Claude Code session inside Figma while keeping execution on their own machine.
+
+The product is made of two parts:
+
+- **Bridge app** — a local menubar app on macOS that manages the local session and exposes a localhost connection for Figma
+- **Figma plugin** — the UI inside Figma that opens the terminal panel and sends requests to the bridge app
+
+This setup keeps the workflow close to design review, implementation, and iteration without asking users to switch between Figma and a separate terminal window all day.
+
+## How It Works
+
+1. The bridge app runs locally on your Mac and starts the local service used by the plugin.
+2. The Figma plugin connects to the bridge app through `localhost:9528`.
+3. Claude Code runs on your machine with your own CLI login and local files.
+4. Commands, output, and interaction are rendered back into the Figma panel.
+5. Usage status and reset timing are also exposed through the menubar app.
+
+In short: Figma provides the interface, the bridge app handles local communication, and Claude Code does the actual work on your computer.
+
+---
+
 ## Install
 
 ### Bridge app
