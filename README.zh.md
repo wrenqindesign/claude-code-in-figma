@@ -57,6 +57,7 @@ curl -fsSL https://raw.githubusercontent.com/wrenqindesign/claude-code-in-figma/
 - 安装脚本会自动为 **Apple Silicon（`arm64`）** 和 **Intel（`x86_64`）** Mac 选择对应版本
 - 你仍然需要单独安装并登录 Claude Code CLI
 - 安装路径默认是 `~/Applications/Claude Code in Figma.app`
+- **请勿直接从 Releases 下载 `.zip` 安装。** 直接下载的包缺少 quarantine 清除步骤，macOS Gatekeeper 会阻止应用运行。
 
 ---
 
