@@ -1,3 +1,4 @@
-# Tell GitHub Linguist to ignore bundled build artifacts
+# Exclude build artifacts and distribution scripts from language stats
 figma-plugin/ui.html linguist-generated=true
 figma-plugin/code.js linguist-generated=true
+install.sh linguist-detectable=false
