@@ -61,6 +61,7 @@ Notes:
 - This installer automatically selects the correct build for **Apple Silicon (`arm64`)** and **Intel (`x86_64`)** Macs.
 - Claude Code CLI still needs to be installed and logged in separately.
 - It installs to `~/Applications/Claude Code in Figma.app`.
+- **Do not download the `.zip` directly from Releases.** Direct downloads are blocked by macOS Gatekeeper because the quarantine attribute is not removed.
 
 ---
 
